@@ -1,17 +1,17 @@
-const Product = require(`./Product`)
-
 class Cart {
-    constructor(products = [], total = 0) {
-this.products = products
-this.total = total
+    constructor() {
+        this.products = [];
+        this.total = 0;
     }
-    addProduct(product) {
-        if(product instanceof Product) {
-            this.products.push(product)
-        }
-        else {
-            throw new Error('Product instance does not exist')
-        }
-        this.total = this.products.length()
+    addProduct(product){
+        this.products.push(product);
+        this.total += product.price;
+    }
+    removeProduct(index){
+        this.total -= this.products[index].price;
+        this.products.splice(index, 1);
+
     }
 }
+
+module.exports = Cart;

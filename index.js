@@ -2,6 +2,7 @@
 
 const Product = require(`./classes/Product`)
 
+const Cart = require(`./classes/Cart`)
 
 
 
